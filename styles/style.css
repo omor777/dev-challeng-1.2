@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+}
+
+.grid {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #fafaf9;
+  padding: 130px 50px;
+  display: grid;
+  gap: 32px;
+  grid-template-areas:
+    "one one one one one one . . two two two two"
+    "one one one one one one three three three three . .";
+}
+
+.item-1 {
+  grid-area: one;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.item-2 {
+  grid-area: two;
+}
+.item-3 {
+  grid-area: three;
+}
+/* item-1 style here */
+
+.item-1 .star {
+  background-color: #f5c044;
+  width: fit-content;
+  padding: 12px;
+  border-radius: 50%;
+  color: white;
+}
+
+.item-1 .heading {
+  font-size: 36px;
+}
+
+.item-1 .desc {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.checkList {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.checkList > p:first-of-type {
+  background-color: rgb(43, 164, 43);
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.checkList > p:last-of-type {
+  font-size: 14px;
+}
+
+/* card design */
+
+.card {
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card img {
+  width: 80px;
+}
+
+.card .row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.star_container {
+  color: rgb(255, 194, 38);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.star_container i {
+  font-size: 18px;
+}
+.star_container i:last-of-type {
+  color: #ddd;
+}
+
+.card .desc {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@media only screen and (max-width: 840px) {
+  .grid {
+    grid-template-areas:
+      "one one one one one one . two two two two two"
+      "one one one one one one three three three three three .";
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .grid {
+    width: 100%;
+    grid-template-areas:
+      "one one one one one one one one one one one one"
+      ". . . . . two two two two two two two"
+      "three three three three three three three . . . . .";
+    row-gap: 32px;
+    padding: 100px 1rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .grid {
+    grid-template-areas:
+      "one one one one one one one one one one one one"
+      ". . . . two two two two two two two two"
+      "three three three three three three three three . . . .";
+  }
+}
+@media only screen and (max-width: 480px) {
+  .grid {
+    grid-template-areas:
+      "one one one one one one one one one one one one"
+      ". . . two two two two two two two two two"
+      "three three three three three three three three three . . .";
+  }
+}
+@media only screen and (max-width: 420px) {
+  .grid {
+    grid-template-areas:
+      "one one one one one one one one one one one one"
+      "two two two two two two two two two two two two"
+      "three three three three three three three three three three three three";
+  }
+}
